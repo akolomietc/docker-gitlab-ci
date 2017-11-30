@@ -1,5 +1,5 @@
 # Base image: https://hub.docker.com/_/golang/
-FROM golang:1.9
+FROM golang:1.9.2-alpine
 MAINTAINER pilotuser <pilotuser@gmail.com>
 # Install golang dep
 ENV GOPATH /go
@@ -13,5 +13,5 @@ RUN go get -u github.com/golang/lint/golint
 ENV GOPATH /go
 ENV PATH ${GOPATH}/bin:$PATH
 RUN go get -u github.com/jteeuwen/go-bindata/...
-# Install docker.io
-RUN apt-get update && apt-get install -y docker
+# Install docker
+RUN apk update && apk add docker
