@@ -14,4 +14,4 @@ ENV GOPATH /go
 ENV PATH ${GOPATH}/bin:$PATH
 RUN go get -u github.com/jteeuwen/go-bindata/...
 # Install docker.io
-RUN apt-get update && apt-get install -y docker.io
+RUN apt-get update && apt-get install -y docker
