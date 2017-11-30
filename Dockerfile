@@ -14,4 +14,6 @@ ENV GOPATH /go
 ENV PATH ${GOPATH}/bin:$PATH
 RUN go get -u github.com/jteeuwen/go-bindata/...
 # Install docker
-RUN apk update && apk add docker
+RUN apk update && apk upgrade && \
+    apk add --no-cache bash git openssh && \ 
+    apk add docker
